@@ -135,6 +135,7 @@ services:
     tty: true
     volumes:
       - nginx-shared-cfg:/nginx
+      - ./docker/media_chains:/app/staticfiles/chains/
     env_file:
       - container_env_files/cfg.env
     depends_on:
@@ -155,7 +156,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: safeglobal/safe-wallet-web:${UI_VERSION}
+    image: ghcr.io/dcdao/safe-wallet-web:${UI_VERSION}
     env_file:
       - container_env_files/ui.env
     depends_on:
