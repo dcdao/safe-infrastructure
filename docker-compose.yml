@@ -166,7 +166,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: ghcr.io/dcdao/safe-wallet-web:${UI_VERSION}
+    image: ghcr.io/ringdao-community-guild/safe-wallet-web:${UI_VERSION}
     env_file:
       - container_env_files/ui.env
     depends_on:
